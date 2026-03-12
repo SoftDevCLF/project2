@@ -4,10 +4,10 @@ export default function Pagination() {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="flex items-center gap-2 my-6 justify-center">
+    <div className="my-6 flex items-center justify-center gap-2">
       <button
         onClick={() => setPage((p) => Math.max(p - 1, 1))}
-        className="px-3 py-1 rounded bg-gray-300 hover:bg-gray-400 cursor-pointer"
+        className="cursor-pointer rounded bg-gray-300 px-3 py-1 text-gray-900 hover:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
         disabled={page === 1}
       >
         Previous
@@ -16,14 +16,14 @@ export default function Pagination() {
         <button
           key={p}
           onClick={() => setPage(p)}
-          className={`px-3 py-1 border border-gray-300 bg-[#D1D5DB] cursor-pointer rounded ${page === p ? "bg-blue-600 text-white" : "hover:bg-gray-400"}`}
+          className={`cursor-pointer rounded border border-gray-300 px-3 py-1 text-gray-900 dark:border-gray-700 dark:text-gray-100 ${page === p ? "bg-blue-600 text-white dark:bg-blue-500" : "bg-gray-300 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"}`}
         >
           {p}
         </button>
       ))}
       <button
         onClick={() => setPage((p) => Math.min(p + 1, 2))}
-        className="px-3 py-1 rounded bg-gray-300 hover:bg-gray-400 cursor-pointer"
+        className="cursor-pointer rounded bg-gray-300 px-3 py-1 text-gray-900 hover:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
         disabled={page === 2}
       >
         Next
